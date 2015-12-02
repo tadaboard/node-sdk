@@ -77,7 +77,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     return Request;
   })();
 
-  widgetsToArray = function (widgets) {
+  var response__widgetsToArray = function response__widgetsToArray(widgets) {
     result = [];
     Object.keys(widgets).forEach(function (key) {
       result.push({
@@ -111,7 +111,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return {
           timestamp: Date.now(),
           query: this.query.getQuery(),
-          item: widgetsToArray(this.widgets)
+          item: response__widgetsToArray(this.widgets)
         };
       }
     }, {

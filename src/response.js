@@ -1,7 +1,7 @@
 import Query from './query';
 import Request from './request';
 
-widgetsToArray = (widgets) => {
+let widgetsToArray = (widgets) => {
   result = [];
   Object.keys(widgets).forEach(function(key) {
     result.push({
