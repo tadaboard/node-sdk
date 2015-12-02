@@ -21,21 +21,19 @@ npm install --save-dev tadaboard-node-sdk
 ## Usage
 
 ```javascript
-var TB = require('tadaboard-node-sdk');
+var TB = require('tadaboard');
 
-// In your own request handling function
-function handleRequest(req, res) {
-  // Read your request body
-  var tb = new TB.Response({ requestBody: body, queryDefault: {} })
-  tb.widget('widgetId', yourData)
-  // Send the final response
-  res.setHeader('Content-Type', 'application/json');
-  res.send(tb.toString());;
-  res.end();
-}
+// Body shuold be a JSON either as string or object
+var tb = new TB.Response({ requestBody: body, queryDefault: {} })
+tb.widget('widgetId', yourData)
+// Send the final response
+res.setHeader('Content-Type', 'application/json');
+res.send(tb.toString());;
+res.end();
+
 ```
 
-## API reference
+## API reference  
 
 #### Constructor
 

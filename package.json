@@ -1,8 +1,8 @@
 {
-  "name": "tadaboard-node-sdk",
+  "name": "tadaboard",
   "version": "0.0.1",
   "description": "Tadaboard Node.js SDK for faster response creation",
-  "main": "dist/tadaboard-node-sdk.js",
+  "main": "dist/tadaboard.js",
   "scripts": {
     "test": "gulp",
     "test-browser": "gulp test-browser",
@@ -55,12 +55,15 @@
     "watchify": "^3.3.1"
   },
   "babelBoilerplateOptions": {
-    "entryFileName": "tadaboard-node-sdk",
+    "entryFileName": "tadaboard",
     "mainVarName": "TB",
     "mochaGlobals": [
       "stub",
       "spy",
       "expect"
     ]
+  },
+  "dependencies": {
+    "lodash": "^3.10.1"
   }
 }

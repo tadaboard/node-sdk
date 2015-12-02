@@ -36,14 +36,20 @@ describe('TB', () => {
     describe('toJSON', () => {
       it('should return a valid JSON', () => {
         response.widgets = {'1': {data: 123}};
-        let json = JSON.parse(response.toJSON());
-        expect(json).to.be.jsonSchema(responseSchema);
+        expect(response.toJSON()).to.be.jsonSchema(responseSchema);
       });
 
       it('should should return a JSON with merged ID and data', () => {
         response.widgets = {'1': {data: 123}};
-        let json = JSON.parse(response.toJSON());
-        expect(json.item).to.be.eql([{'id': '1', 'data': {'data': 123}}]);
+        expect(response.toJSON().item).to.be.eql([{id: '1', data: {data: 123}}]);
+      });
+    });
+
+    describe('toString', () => {
+      it('should return a valid JSON as string', () => {
+        response.widgets = {'1': {data: 123}};
+        let json = JSON.parse(response.toString());
+        expect(json).to.be.jsonSchema(responseSchema);
       });
     });
   });

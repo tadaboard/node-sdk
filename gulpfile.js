@@ -104,8 +104,9 @@ function getBundler() {
   // Our browserify bundle is made up of our unit tests, which
   // should individually load up pieces of our application.
   // We also include the browserify setup file.
-  var testFiles = glob.sync('./test/unit/**/*');
-  var allFiles = ['./test/setup/browserify.js'].concat(testFiles);
+  var unitFiles = glob.sync('./test/unit/**/*');
+  var integrationFiles = glob.sync('./test/integration/**/*');
+  var allFiles = ['./test/setup/browserify.js'].concat(unitFiles).concat(integrationFiles);
 
   // Create our bundler, passing in the arguments required for watchify
   var bundler = browserify(allFiles, watchify.args);
@@ -131,7 +132,7 @@ gulp.task('browserify', function() {
 });
 
 function test() {
-  return gulp.src(['test/setup/node.js', 'test/unit/**/*.js'], {read: false})
+  return gulp.src(['test/setup/node.js', 'test/unit/**/*.js', 'test/integration/**/*.js'], {read: false})
     .pipe($.mocha({reporter: 'dot', globals: config.mochaGlobals}));
 }
 

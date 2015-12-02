@@ -1,3 +1,6 @@
+import Query from './query';
+import Request from './request';
+
 widgetsToArray = (widgets) => {
   result = [];
   Object.keys(widgets).forEach(function(key) {
@@ -11,8 +14,10 @@ widgetsToArray = (widgets) => {
 };
 
 export default class Response {
-  constructor() {
+  constructor(options = {}) {
     this.widgets = {};
+    this.request = new Request(options.requestBody);
+    this.query = new Query({default: options.queryDefault, request: this.request});
   }
 
   widget(id, data) {
@@ -20,10 +25,14 @@ export default class Response {
   }
 
   toJSON() {
-    return JSON.stringify({
+    return {
       timestamp: Date.now(),
-      query: {},
+      query: this.query.getQuery(),
       item: widgetsToArray(this.widgets)
-    });
+    };
+  }
+
+  toString() {
+    return JSON.stringify(this.toJSON());
   }
 }

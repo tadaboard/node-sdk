@@ -1,4 +1,4 @@
-import TB from '../../src/tadaboard-node-sdk';
+import TB from '../../src/tadaboard';
 
 describe('TB', () => {
   describe('response', () => {
