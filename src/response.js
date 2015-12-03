@@ -2,7 +2,7 @@ import Query from './query';
 import Request from './request';
 
 let widgetsToArray = (widgets) => {
-  result = [];
+  let result = [];
   Object.keys(widgets).forEach(function(key) {
     result.push({
       id: key,

@@ -24,12 +24,14 @@ npm install --save-dev tadaboard-node-sdk
 var TB = require('tadaboard');
 
 // Body shuold be a JSON either as string or object
-var tb = new TB.Response({ requestBody: body, queryDefault: {} })
-tb.widget('widgetId', yourData)
-// Send the final response
-res.setHeader('Content-Type', 'application/json');
-res.send(tb.toString());;
-res.end();
+var tb = new TB.response({ requestBody: body, queryDefault: {} });
+tb.widget('widgetId', yourData);
+// Do the above for each widget you have in your dashboard
+
+// Get the response JSON as either object
+tb.toJSON();
+// or string
+tb.toString();
 
 ```
 
@@ -38,7 +40,7 @@ res.end();
 #### Constructor
 
 ```javascript
-new TB.Response(options)
+new TB.response(options)
 ```
 
 where options has these properties:

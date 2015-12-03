@@ -1,6 +1,6 @@
 {
   "name": "tadaboard",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Tadaboard Node.js SDK for faster response creation",
   "main": "dist/tadaboard.js",
   "scripts": {

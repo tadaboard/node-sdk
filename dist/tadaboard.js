@@ -78,7 +78,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   })();
 
   var response__widgetsToArray = function response__widgetsToArray(widgets) {
-    result = [];
+    var result = [];
     Object.keys(widgets).forEach(function (key) {
       result.push({
         id: key,
