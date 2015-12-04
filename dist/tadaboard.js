@@ -101,6 +101,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     _createClass(Response, [{
+      key: 'getQuery',
+      value: function getQuery() {
+        return this.query.getQuery();
+      }
+    }, {
       key: 'widget',
       value: function widget(id, data) {
         this.widgets[id] = data;

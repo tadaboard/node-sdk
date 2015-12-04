@@ -20,6 +20,10 @@ export default class Response {
     this.query = new Query({default: options.queryDefault, request: this.request});
   }
 
+  getQuery() {
+    return this.query.getQuery();
+  }
+
   widget(id, data) {
     this.widgets[id] = data;
   }

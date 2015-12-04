@@ -33,6 +33,12 @@ describe('TB', () => {
       expect(response.widgets).to.be.an('object').and.be.empty;
     });
 
+    describe('getQuery', () => {
+      it('should return the actual query', () => {
+        expect(response.getQuery()).to.be.eql({});
+      });
+    });
+
     describe('toJSON', () => {
       it('should return a valid JSON', () => {
         response.widgets = {'1': {data: 123}};
